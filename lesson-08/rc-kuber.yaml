@@ -5,15 +5,15 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: http-server
+    app: nginx-server
   template:
     metadata:
       name: kuber-app
       labels:
-        app: http-server
+        app: nginx-server
     spec:
       containers:
-      - name: http-server-image
-        image: bokovets/kuber
+      - name: nginx-server-image
+        image: vladbuk/k8sphp:arm64
         ports:
-        - containerPort: 8000
+        - containerPort: 80
