@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myphp
+  labels:
+    app: nginx
+    env: dev
+spec:
+  containers:
+  - name: myk8sphp
+    image: vladbuk/k8sphp:arm64
+    ports:
+    - containerPort: 80
+
