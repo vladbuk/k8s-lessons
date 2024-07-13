@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: kuber-gostatic
-        image: pierrezemb/gostatic
+        image: vladbuk/gostatic:0.2
         ports:
         - containerPort: 8043
