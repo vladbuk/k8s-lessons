@@ -2,12 +2,17 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kuber-service
+  labels:
+    app: kuber
+    env: test
 spec:
   selector:
     app: gostatic
   ports:
     - protocol: TCP
+      name: gostatic-port
       port: 8043
       targetPort: 8043
       nodePort: 30007
+  type: NodePort
 
