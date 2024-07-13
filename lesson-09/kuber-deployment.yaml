@@ -14,14 +14,14 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: http-server
+      app: gostatic
   template:
     metadata:
       labels:
-        app: http-server
+        app: gostatic
     spec:
       containers:
-      - name: kuber-app
-        image: bokovets/kuber:v2.0
+      - name: kuber-gostatic
+        image: pierrezemb/gostatic
         ports:
-        - containerPort: 8000
+        - containerPort: 8043
