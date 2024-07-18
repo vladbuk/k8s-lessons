@@ -4,9 +4,9 @@ metadata:
   name: kuber-service
 spec:
   selector:
-    app: http-server
+    app: go-server
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8000
+      targetPort: 8043
   type: ClusterIP
