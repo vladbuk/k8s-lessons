@@ -22,6 +22,6 @@ spec:
     spec:
       containers:
       - name: kuber-k8sphp
-        image: vladbuk/k8sphp:0.3
+        image: vladbuk/k8sphp:0.4
         ports:
         - containerPort: 80
