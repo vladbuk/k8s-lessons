@@ -15,10 +15,10 @@ spec:
         app: http-server-v2
     spec:
       containers:
-      - name: kuber-app
-        image: bakavets/kuber:v2.0
+      - name: kuber-k8sphp
+        image: vladbuk/k8sphp:0.2
         ports:
-        - containerPort: 8000
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -30,5 +30,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8000
+      targetPort: 80
+      nodePort: 30100 # port-range: 30000-32767
+  type: NodePort
 
