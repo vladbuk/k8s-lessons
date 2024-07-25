@@ -17,10 +17,13 @@ spec:
       containers:
       - name: kuber-app
         image: bakavets/kuber:v1.0-args
-        args: 
-        - "3"
-        - "2"
-        - text-temp
+        #command: ["python3", "-u", "server-default.py"] #redefine entrypoint
+        #args: ["My favorite text"] # redefine cmd
+        args: ["1","5","some text"]
+        # args: # another variant to add arguments
+        # - "3"
+        # - "2"
+        # - text-temp
         ports:
         - containerPort: 8000
 ---
