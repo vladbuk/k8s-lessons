@@ -19,7 +19,7 @@ spec:
         image: bakavets/kuber:v1.0-args
         #command: ["python3", "-u", "server-default.py"] #redefine entrypoint
         #args: ["My favorite text"] # redefine cmd
-        args: ["1","5","some text"]
+        args: ["1","10","Super text in arguments"]
         # args: # another variant to add arguments
         # - "3"
         # - "2"
