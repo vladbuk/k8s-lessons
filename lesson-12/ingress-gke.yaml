@@ -1,9 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: main-ingress
+  name: gce-internal
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "web-static-ip"
 spec:
-  ingressClassName: nginx
+  ingressClassName: gce-internal
   rules:
    - host: vladbuk.vm.dom
      http:
