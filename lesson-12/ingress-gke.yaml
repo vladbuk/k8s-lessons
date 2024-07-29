@@ -1,13 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: gce-internal
+  name: external-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "web-static-ip"
+    kubernetes.io/ingress.class: "gce"
 spec:
-  ingressClassName: gce-internal
   rules:
-   - host: vladbuk.vm.dom
+   - host: vladbuk.example.com
      http:
         paths:
           - path: /

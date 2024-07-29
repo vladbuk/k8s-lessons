@@ -33,7 +33,6 @@ metadata:
   name: kuber-service-v1
   annotations:
     cloud.google.com/neg: '{"ingress": true}'
-    networking.gke.io/load-balancer-type: "Internal"
 spec:
   selector:
     app: http-server-v1
@@ -41,6 +40,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30010 # port-range: 30000-32767
-  type: NodePort
+      #nodePort: 30010 # port-range: 30000-32767
+  type: ClusterIP
 
