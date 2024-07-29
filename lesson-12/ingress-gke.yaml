@@ -37,3 +37,10 @@ spec:
                 name: kuber-service-v3
                 port: 
                   number: 80
+          - path: /v4
+            pathType: Prefix
+            backend:
+              service:
+                name: kuber-service-v4
+                port: 
+                  number: 80

@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-v4
+  labels:
+    app: kuber-v4
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: http-server-v4
+  template:
+    metadata:
+      labels:
+        app: http-server-v4
+    spec:
+      containers:
+      - name: kuber-k8sphp
+        image: vladbuk/k8sphp:0.4.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "25m"
+          limits:
+            memory: "128Mi"
+            cpu: "50m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kuber-service-v4
+  #annotations:
+  #  cloud.google.com/neg: '{"ingress": true}'
+spec:
+  selector:
+    app: http-server-v4
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      #nodePort: 30030 # port-range: 30000-32767
+  type: ClusterIP
+
