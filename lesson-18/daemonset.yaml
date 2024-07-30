@@ -13,8 +13,8 @@ spec:
       labels:
         app: kuber-daemon
     spec:
-      nodeSelector:
-        topology.kubernetes.io/zone: "eu-west-1c"
+      #nodeSelector:
+      #  topology.kubernetes.io/zone: "eu-west-1c"
       containers:
       - name: kuber-app
         image: bakavets/kuber
