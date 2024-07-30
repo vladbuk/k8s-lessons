@@ -30,7 +30,7 @@ spec:
         #- mountPath: /usr/share/nginx/html/data
         - mountPath: /cache-2
           name: cache-volume
-          subPath: data
+          #subPath: data
       volumes:
       - name: cache-volume
         emptyDir: {}
