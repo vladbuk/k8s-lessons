@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber
+  labels:
+    app: kuber
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-server
+  template:
+    metadata:
+      labels:
+        app: http-server
+    spec:
+      containers:
+      - name: kuber-app
+        image: vladbuk/k8sphp:0.1
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /cache
+          name: cache-volume
+      volumes:
+      - name: cache-volume
+        persistentVolumeClaim:
+          claimName: gke-pvc-kuber
