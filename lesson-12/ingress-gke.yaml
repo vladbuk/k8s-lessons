@@ -44,3 +44,17 @@ spec:
                 name: kuber-service-v4
                 port: 
                   number: 80
+          - path: /app1
+            pathType: Prefix
+            backend:
+              service:
+                name: myapp1-service
+                port: 
+                  number: 80
+          - path: /app2
+            pathType: Prefix
+            backend:
+              service:
+                name: myapp2-service
+                port: 
+                  number: 80
